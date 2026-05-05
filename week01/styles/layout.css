@@ -1,77 +1,104 @@
 body {
+    /* turn body into a 3 x 3 grid container the full height of the viewport */
     display: grid;
     height: 100vh;
     grid-template: auto 1fr auto / 300px 1fr auto;
-}
+    /* full grid structure
 
-header {
-    background: lightpink;
-    padding: 2rem;
-    grid-column: 1 / 4;
-}
+            300px        1fr         auto
+        -------------------------------------
+auto    |      |        |        |         |
+        |      |        |        |         |
+        -------------------------------------
+1fr     |      |        |        |         |
+        |      |        |        |         |
+        -------------------------------------
+auto    |      |        |        |         |
+        |      |        |        |         |
+        -------------------------------------
 
-.left-sidebar {
-    background: lightblue;
-    grid-column: 1 / 2;
-}
+Rows:
+  auto   → content height header)
+  1fr    → fills remaining space (main)
+  auto   → content height (footer)
 
-main {
-    background: coral;
-    grid-column: 2 / 3;
-}
+Columns:
+  300px  → fixed sidebar
+  1fr    → flexible main content
+  auto   → content-sized column
+*/
 
-.right-sidebar {
-    background: yellow;
-    grid-column: 3 / 4;
-}
+    header {
+        background: lightpink;
+        padding: 2rem;
+        grid-column: 1 / 4;
+    }
 
-footer {
-    background: wheat;
-    padding: 2rem;
-    text-align: center;
-    grid-column: 1 / 4;
-}
+    .left-sidebar {
+        background: lightblue;
+        grid-column: 1 / 2;
+    }
 
-.left-sidebar,
-.right-sidebar {
-    padding: 1rem;
-}
+    main {
+        background: coral;
+        grid-column: 2 / 3;
+    }
 
-nav {
-    margin: 0 auto 2rem;
-    max-width: 90vw;
-}
+    .right-sidebar {
+        background: yellow;
+        grid-column: 3 / 4;
+    }
 
-main {
-    margin: 1rem;
-    border: 1px solid rgb(0 0 0 / .2);
-    padding: 1rem;
-    background-color: #eee;
-}
+    footer {
+        background: wheat;
+        padding: 2rem;
+        text-align: center;
+        grid-column: 1 / 4;
+    }
 
-.navigation {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #333;
-    align-items: center;
-}
+    .left-sidebar,
+    .right-sidebar {
+        padding: 1rem;
+    }
 
-.navigation li {
-    flex: 1 1 auto;
-    /* What is the difference between auto and 100% flex-basis? - turn on link borders to view */
-}
+    nav {
+        margin: 0 auto 2rem;
+        max-width: 90vw;
+    }
 
-.navigation a {
-    font-weight: 700;
-    display: block;
-    color: #eee;
-    padding: 0.75rem;
-    text-decoration: none;
-    text-align: center;
-}
+    main {
+        margin: 1rem;
+        border: 1px solid rgb(0 0 0 / .2);
+        padding: 1rem;
+        background-color: #eee;
+    }
 
-.navigation a:hover {
-    text-decoration: underline;
-    text-decoration-color: yellow;
-}
+    .navigation {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #333;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navigation li {
+        flex: 1 1 auto;
+        /* What is the difference between auto and 100% flex-basis? - turn on link borders to view */
+    }
+
+    .navigation a {
+        font-weight: 700;
+        display: block;
+        color: #eee;
+        padding: 0.75rem;
+        text-decoration: none;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .navigation a:hover {
+        text-decoration: underline;
+        text-decoration-color: yellow;
+    }
