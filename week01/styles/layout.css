@@ -3,101 +3,109 @@ body {
     display: grid;
     height: 100vh;
     grid-template: auto 1fr auto / 300px 1fr auto;
-    /* full grid structure
+    /* grid-template: [ROWS - vertical] / [COLUMNS - horizontal];
 
-            300px        1fr         auto
-        -------------------------------------
-auto    |      |        |        |         |
-        |      |        |        |         |
-        -------------------------------------
-1fr     |      |        |        |         |
-        |      |        |        |         |
-        -------------------------------------
-auto    |      |        |        |         |
-        |      |        |        |         |
-        -------------------------------------
-
-Rows:
-  auto   → content height header)
-  1fr    → fills remaining space (main)
-  auto   → content height (footer)
-
-Columns:
-  300px  → fixed sidebar
-  1fr    → flexible main content
-  auto   → content-sized column
+          300px       1fr         auto
+        ----------------------------------
+        |      |               |         |
+auto    |      |               |         |
+        |      |               |         |
+        ----------------------------------
+        |      |               |         |
+1fr     |      |               |         |
+        |      |               |         |
+        ----------------------------------
+        |      |               |         |
+auto    |      |               |         |
+        |      |               |         |
+        ----------------------------------
 */
+}
 
-    header {
-        background: lightpink;
-        padding: 2rem;
-        grid-column: 1 / 4;
-    }
+header {
+    background: lightpink;
+    padding: 2rem;
+    grid-column: 1 / 4;
+    /* span all 3 columns with header */
+    /* grid-row: 1 / 2; is not necessary as order is implied by the HTML structure. */
+}
 
-    .left-sidebar {
-        background: lightblue;
-        grid-column: 1 / 2;
-    }
+.left-sidebar {
+    background: lightblue;
+    grid-column: 1 / 2;
+    /* grid-row: 2 / 3; is not necessary as order is implied by the HTML structure. */
+}
 
-    main {
-        background: coral;
-        grid-column: 2 / 3;
-    }
+main {
+    background: coral;
+    grid-column: 2 / 3;
+    /* grid-row: 2 / 3; is not necessary as order is implied by the HTML structure. */
+}
 
-    .right-sidebar {
-        background: yellow;
-        grid-column: 3 / 4;
-    }
+.right-sidebar {
+    background: yellow;
+    grid-column: 3 / 4;
+    /* grid-row: 2 / 3; is not necessary as order is implied by the HTML structure. */
+}
 
-    footer {
-        background: wheat;
-        padding: 2rem;
-        text-align: center;
-        grid-column: 1 / 4;
-    }
+footer {
+    background: wheat;
+    padding: 2rem;
+    text-align: center;
+    grid-column: 1 / 4;
+    /* span all 3 columns with header */
+    /* grid-row: 3 / 4; is not necessary as order is implied by the HTML structure. */
+}
 
-    .left-sidebar,
-    .right-sidebar {
-        padding: 1rem;
-    }
+.left-sidebar,
+.right-sidebar {
+    padding: 1rem;
+}
 
-    nav {
-        margin: 0 auto 2rem;
-        max-width: 90vw;
-    }
+nav {
+    margin: 0 auto 2rem;
+    max-width: 90vw;
+}
 
-    main {
-        margin: 1rem;
-        border: 1px solid rgb(0 0 0 / .2);
-        padding: 1rem;
-        background-color: #eee;
-    }
+main {
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0 / .2);
+    padding: 1rem;
+    background-color: #eee;
+}
 
-    .navigation {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        background-color: #333;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-    }
+.navigation {
+    list-style: none;
+    display: flex;
+    /* turns the list <ul> into a flex container 
+    all direct children (<li>) will be flex items
+    they will be laid out in a row (horizontally) by default. */
+    flex-wrap: wrap;
+    background-color: #333;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
 
-    .navigation li {
-        flex: 1 1 auto;
-    }
+.navigation li {
+    flex: 1 1 auto;
+    /* 1 - each <li>'s width expands to share available space equally
+       1 - each <li>'s width shrinks to share available space equally
+       auto - starting size is based on the content */
+}
 
-    .navigation a {
-        font-weight: 700;
-        display: block;
-        color: #eee;
-        padding: 0.75rem;
-        text-decoration: none;
-        text-align: center;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
+.navigation a {
+    font-weight: 700;
+    display: block;
+    /* Turns the <a> from inline → clickable block */
+    color: #eee;
+    padding: 0.75rem;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-    .navigation a:hover {
-        text-decoration: underline;
-        text-decoration-color: yellow;
-    }
+.navigation a:hover {
+    text-decoration: underline;
+    text-decoration-color: yellow;
+}
