@@ -1,0 +1,276 @@
+/* -------------------------
+   ROOT VARIABLES
+--------------------------*/
+:root {
+    /* COLOR PALETTE */
+    --primary-color: #0b5d1e;
+    /* Forest green */
+    --secondary-color: #2c3e50;
+    /* Dark blue-gray (nav bar) */
+    --accent-color: #f4f4f4;
+    /* Light background */
+    --card-color: #ffffff;
+    /* Card background */
+    --border-color: #333333;
+    /* same as text color */
+    /* --border-color: #dcdcdc; */
+    /* Optional Light border */
+
+    --text-color: #333333;
+    /* Body text */
+    --light-text: #ffffff;
+    /* Text on dark backgrounds */
+
+    --header-bar-background-color: var(--primary-color);
+    --header-bar-text-color: var(--secondary-color);
+    /* unifying the background of h1 and the table header everywhere */
+
+    /* FONTS */
+    --heading-font: "McLaren", cursive;
+    --body-font: "Roboto", Arial, sans-serif;
+
+    --max-width: 75rem;
+    /* 1200px */
+
+    --radius: .75rem;
+    /* 12px */
+
+    /* spacing scale */
+    --space-xs: 0.25rem;
+    /* 4px */
+    --space-sm: 0.5rem;
+    /* 8px */
+    --space-md: 1rem;
+    /* 16px */
+    --space-lg: 1.5rem;
+    /* 24px */
+    --space-xl: 2rem;
+    /* 32px */
+    /* unified spacing units and spacing everywhere */
+}
+
+/* -------------------------
+   GLOBAL RESET
+--------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* include padding and border inside an element’s declared width and height */
+}
+
+/* -------------------------
+   TYPOGRAPHY
+--------------------------*/
+h1 {
+    text-align: center;
+    font-family: var(--heading-font);
+    color: var(--text-color);
+
+}
+
+h2 {
+    text-align: center;
+    font-family: var(--heading-font);
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    font-weight: 400;
+    margin: var(--space-lg) 0;
+    padding: var(--space-md);
+}
+
+body {
+    max-width: var(--max-width);
+    /* keeps content from stretching full width (edge to edge) */
+    line-height: 1.6;
+    margin: 0 auto;
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--accent-color);
+}
+
+/* -------------------------
+   HEADER
+--------------------------*/
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: var(--space-lg);
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 0;
+    font-family: var(--heading-font);
+    font-weight: 400;
+}
+
+#course-title {
+    padding: var(--space-lg);
+}
+
+/* -------------------------
+   NAV BAR
+--------------------------*/
+nav {
+    background-color: var(--secondary-color);
+}
+
+.navigation {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    flex: 1;
+}
+
+.navigation a {
+    display: block;
+    text-align: center;
+    padding: 0.75rem;
+    text-decoration: none;
+    color: var(--light-text);
+    font-weight: 400;
+}
+
+.navigation a:hover {
+    background-color: var(--primary-color);
+}
+
+/* -------------------------
+   MAIN
+--------------------------*/
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-lg);
+}
+
+/* -------------------------
+   CARDS
+--------------------------*/
+.card {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    margin: var(--space-md);
+    overflow: hidden;
+}
+
+/* .card HEADERS */
+.card h2 {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    margin: 0;
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--heading-font);
+    font-size: 1rem;
+}
+
+/* CONTENT */
+.card-content {
+    display: flex;
+}
+
+.card p {
+    padding: var(--space-md);
+    margin: 0;
+}
+
+.card img {
+    width: 200px;
+    height: auto;
+    display: block;
+    padding: var(--space-lg) var(--space-lg) 0 var(--space-lg);
+    /* makes the image behave like a block element instead of inline text,
+    removing the small space below the image and making layout more predictable */
+}
+
+figcaption {
+    text-align: center;
+}
+
+.card-content-top {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+}
+
+.country-heading {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 200px);
+    text-align: center;
+}
+
+.country-heading h3 {
+    display: inline-block;
+    width: 450px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--space-xs);
+}
+
+/* -------------------------
+   LINKS
+--------------------------*/
+
+.links-card {
+    /* .links-card is a vertical flex container with 1 item inside it (.links-container). */
+    display: flex;
+    flex-direction: column;
+}
+
+.links-container {
+    flex: 1;
+    /* makes .links-container grow taller to fill the links-card. */
+    display: flex;
+    /* make the .links-container a flex container */
+    align-items: center;
+    /* vertically centers the child <ul> because the cross axis is vertical in a row flex container */
+    padding: var(--space-md);
+    outline: 2px solid red;
+}
+
+.links-container ul {
+    margin-left: var(--space-xl);
+    padding: 0;
+}
+
+.links-container a {
+    padding: 0;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* -------------------------
+   FOOTER
+--------------------------*/
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: var(--space-md);
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* LAST MODIFIED LINE */
+#lastModified {
+    margin-top: var(--space-sm);
+    color: #ffd966;
+}

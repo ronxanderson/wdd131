@@ -77,7 +77,8 @@ main {
 .navigation {
     list-style: none;
     display: flex;
-    /* turns the list <ul> into a flex container 
+    /* turns its children (the list items) into a flex container 
+    the list <ul> into a flex container 
     all direct children (<li>) will be flex items
     they will be laid out in a row (horizontally) by default. */
     flex-wrap: wrap;

@@ -4,11 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD131</title>
+    <title>WDD 131 – Dynamic Web Fundamentals – Your Name - Ron Anderson</title>
+    <meta name="author" content="Ron Anderson">
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals home page by Ron Anderson demonstrating HTML, CSS, and JavaScript skills, including responsive design, navigation, and dynamic date features.">
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=McLaren&family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>WDD131 - Anderson</h1>
+    <header>
+        <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+        <nav>
+            <ul class="navigation">
+                <li><a href="http://linkedin.com">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/">Canvas</a></li>
+                <li><a
+                        href="https://www.churchofjesuschrist.org/study/scriptures/nt/luke/23?lang=eng&id=p42#p42">Scripture</a>
+                </li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Ron Anderson</h1>
+        <div class="main-grid">
+            <section class="card">
+                <h2>About Me</h2>
+                <div class="card-content-top">
+                    <p>I am a retired orthopedic surgeon and former engineer who enjoys service, travel, and lifelong
+                        learning. I have lived in
+                        Mongolia, Cambodia, and South Africa doing missionary, humanitarian, and educational work. I am
+                        currently studying web
+                        development through BYU-Idaho Pathway and live in Utah. In my free time, I enjoy gardening,
+                        hiking, and reading.
+                    </p>
+                    <img src="images/profile.jpg" alt="Ron Anderson">
+
+                    <div class="country-heading">
+                        <h3>Johannesburg, South Africa</h3>
+                    </div> <!--  country-heading -->
+                </div> <!--  card-content-top -->
+
+                <div class="card-content">
+                    <figure>
+                        <img src="south-africa-flag.png" alt="South Africa flag">
+                        <figcaption>South Africa Flag</figcaption>
+                    </figure>
+                    <p>My wife and I served as full-time missionaries helping open the BYU-Pathway Worldwide Global
+                        Education Center in
+                        Johannesburg, South Africa, in 2025. The South African flag reflects both the nation’s difficult
+                        past and its hope for
+                        unity and progress. Serving there allowed us to support education and opportunity in a country
+                        still facing the lasting
+                        effects of Apartheid.</p>
+                </div> <!--  card-content -->
+            </section>
+
+            <section class="card links-card">
+                <h2>Web Dev Resources</h2>
+                <div class="links-container">
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>
+                        <li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
+                        <li><a href="https://htmlcolorcodes.com/color-picker/">Color Picker</a></li>
+                        <li><a href="https://www.siegemedia.com/contrast-ratio">Contrast Checker</a></li>
+                        <li><a href="https://squoosh.app/">Squoosh</a></li>
+                        <li><a href="https://validator.w3.org/">W3C HTML Validator</a></li>
+                        <li><a href="https://jigsaw.w3.org/css-validator/">W3C CSS Validator</a></li>
+                        <li><a href="https://validator.w3.org/checklink">W3C Link Checker</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Performance">JavaScript
+                                Performance</a></li>
+                    </ul>
+                </div> <!-- links-container -->
+            </section> <!-- card links-card -->
+        </div> <!--  main-grid -->
+    </main>
+
+    <footer>
+        <p>
+            &copy;<span id="currentYear"></span> 🐾 Ron Anderson 🐾 Utah
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+
 </body>
 
 </html>
