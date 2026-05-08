@@ -233,7 +233,6 @@ figcaption {
     align-items: center;
     /* vertically centers the child <ul> because the cross axis is vertical in a row flex container */
     padding: var(--space-md);
-    outline: 2px solid red;
 }
 
 .links-container ul {
