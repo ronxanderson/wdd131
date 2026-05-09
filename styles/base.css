@@ -143,7 +143,8 @@ nav {
 --------------------------*/
 main {
     display: block;
-    /* <main>is already block by default, this simply satisfies the validator */
+    /* <main> is already block by default, 
+    this simply satisfies the validator which requires some css for <main>*/
 }
 
 .main-grid {
