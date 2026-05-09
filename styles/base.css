@@ -141,6 +141,10 @@ nav {
 /* -------------------------
    MAIN
 --------------------------*/
+main {
+    display: block;
+    /* <main>is already block by default, this simply satisfies the validator */
+}
 
 .main-grid {
     display: grid;
