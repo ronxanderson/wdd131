@@ -260,8 +260,6 @@ figcaption {
 }
 
 .links-container ul {
-    margin-left: var(--space-xl);
-    /* pushes the list of links to the right */
     display: flex;
     flex-direction: column;
     /* creates a flex column to explicitly increase the gap between the links */
