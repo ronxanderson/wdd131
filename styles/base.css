@@ -91,10 +91,13 @@ body {
    HEADER
 --------------------------*/
 header {
+    /* height is controlled by the height of its two children: #course-title and nav */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    /* pushes the navigation bar to the bottom of the header container */
     margin-bottom: var(--space-lg);
+    /* creates space between the nav and my name in the main content */
     background-color: var(--primary-color);
     color: var(--light-text);
     text-align: center;
@@ -115,27 +118,34 @@ nav {
 }
 
 .navigation {
+    /* create a horizontal flex container for the navigation bar */
     display: flex;
     list-style: none;
+    /* no bullets on list items */
     margin: 0;
     padding: 0;
 }
 
 .navigation li {
     flex: 1;
+    /* makes each list item take up an equal share of the horizontal space in the nav bar */
 }
 
 .navigation a {
     display: block;
+    /* increases the clickable area of the link to fill the entire list item block*/
     text-align: center;
+    /* centers the text within the link block horizontally */
     padding: 0.75rem;
     text-decoration: none;
+    /* no underline of link */
     color: var(--light-text);
     font-weight: 400;
 }
 
 .navigation a:hover {
     background-color: var(--primary-color);
+    /* change background color on hover */
 }
 
 /* -------------------------
@@ -162,6 +172,8 @@ main {
     border-radius: var(--radius);
     margin: var(--space-md);
     overflow: hidden;
+    /* If anything inside this element sticks out past its boundaries,
+    cut it off (don’t show it). */
 }
 
 /* .card HEADERS */
@@ -175,8 +187,19 @@ main {
 }
 
 /* CONTENT */
-.card-content {
+
+.about-me-content {
     display: flex;
+    /* create the horizontal container for paragraph, my image and city/country name in the left card */
+    position: relative;
+    /* to enable absolute positioning of the country name container within this container. */
+    align-items: flex-start;
+    /* aligns the paragraph and image at the top of the flex row */
+}
+
+.country-content {
+    display: flex;
+    /* makes the flag/figure and paragraph sit side by side horizontally */
 }
 
 .card p {
@@ -188,32 +211,30 @@ main {
     width: 200px;
     height: auto;
     display: block;
-    padding: var(--space-lg) var(--space-lg) 0 var(--space-lg);
     /* makes the image behave like a block element instead of inline text,
     removing the small space below the image and making layout more predictable */
+    padding: var(--space-lg) var(--space-lg) 0 var(--space-lg);
 }
 
 figcaption {
     text-align: center;
 }
 
-.card-content-top {
-    display: flex;
-    position: relative;
-    align-items: flex-start;
-}
-
 .country-heading {
     position: absolute;
     bottom: 0;
     left: 0;
+    /* positions the country heading container at the bottom left of the about-me-content container 
+    with its border in line with the bottom of the picture */
     width: calc(100% - 200px);
+    /* gives the heading area the remaining width beside the 200px image */
     text-align: center;
 }
 
 .country-heading h3 {
     display: inline-block;
     width: 450px;
+    /* set the width to control the length of the bottom border */
     border-bottom: 1px solid var(--border-color);
     padding-bottom: var(--space-xs);
 }
@@ -222,25 +243,31 @@ figcaption {
    LINKS
 --------------------------*/
 
-.links-card {
-    /* .links-card is a vertical flex container with 1 item inside it (.links-container). */
+.web-dev-resources-card {
+    /* .web-dev-resources-card is a vertical flex container with 2 items inside it,
+     <h2> and .links-container. */
     display: flex;
     flex-direction: column;
 }
 
 .links-container {
     flex: 1;
-    /* makes .links-container grow taller to fill the links-card. */
+    /* since the height of the h2 is set by the text and padding, 
+    this makes .links-container grow taller to fill the web-dev-resources-card. */
     display: flex;
-    /* make the .links-container a flex container */
+    /* make the .links-container a horizontal flex container to hold the ul */
     align-items: center;
-    /* vertically centers the child <ul> because the cross axis is vertical in a row flex container */
-    padding: var(--space-md);
+    /* centers the <ul> vertically inside the tall .links-container */
+    padding: var(--space-lg);
 }
 
 .links-container ul {
     margin-left: var(--space-xl);
-    padding: 0;
+    /* pushes the list of links to the right */
+    display: flex;
+    flex-direction: column;
+    /* creates a flex column to explicitly increase the spacing between the links */
+    gap: var(--space-md);
 }
 
 .links-container a {
