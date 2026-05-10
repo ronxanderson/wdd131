@@ -110,14 +110,11 @@ header {
     padding: var(--space-lg);
 }
 
-/* -------------------------
-   NAV BAR
---------------------------*/
 nav {
     background-color: var(--secondary-color);
 }
 
-.navigation {
+.nav-ul {
     /* create a horizontal flex container for the navigation bar */
     display: flex;
     list-style: none;
@@ -126,12 +123,12 @@ nav {
     padding: 0;
 }
 
-.navigation li {
+.nav-ul li {
     flex: 1;
     /* makes each list item take up an equal share of the horizontal space in the nav bar */
 }
 
-.navigation a {
+.nav-ul a {
     display: block;
     /* increases the clickable area of the link to fill the entire list item block*/
     text-align: center;
@@ -143,7 +140,7 @@ nav {
     font-weight: 400;
 }
 
-.navigation a:hover {
+.nav-ul a:hover {
     background-color: var(--primary-color);
     /* change background color on hover */
 }
@@ -190,11 +187,31 @@ main {
 
 .about-me-content {
     display: flex;
-    /* create the horizontal container for paragraph, my image and city/country name in the left card */
+    /* create the horizontal container for paragraph, my image and city/country name */
     position: relative;
     /* to enable absolute positioning of the country name container within this container. */
     align-items: flex-start;
-    /* aligns the paragraph and image at the top of the flex row */
+    /* aligns the paragraph and image at the start of the flex row */
+
+}
+
+.country-heading {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* positions the bottom left corner of country heading container at the bottom left of the 
+    about-me-content container with its border in line with the bottom of the picture */
+    width: calc(100% - 200px);
+    /* gives the heading area the remaining width beside the 200px image and its left margin */
+    text-align: center;
+}
+
+.country-heading h3 {
+    display: inline-block;
+    width: 450px;
+    /* set the width to control the length of the bottom border */
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--space-xs);
 }
 
 .country-content {
@@ -220,44 +237,25 @@ figcaption {
     text-align: center;
 }
 
-.country-heading {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    /* positions the country heading container at the bottom left of the about-me-content container 
-    with its border in line with the bottom of the picture */
-    width: calc(100% - 200px);
-    /* gives the heading area the remaining width beside the 200px image */
-    text-align: center;
-}
-
-.country-heading h3 {
-    display: inline-block;
-    width: 450px;
-    /* set the width to control the length of the bottom border */
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: var(--space-xs);
-}
-
 /* -------------------------
    LINKS
 --------------------------*/
 
 .web-dev-resources-card {
-    /* .web-dev-resources-card is a vertical flex container with 2 items inside it,
-     <h2> and .links-container. */
+    /* create a vertical flex container which will have 2 items inside it, <h2> and links-container */
     display: flex;
     flex-direction: column;
 }
 
 .links-container {
     flex: 1;
-    /* since the height of the h2 is set by the text and padding, 
-    this makes .links-container grow taller to fill the web-dev-resources-card. */
+    /*  makes .links-container expand vertically to fill the web-dev-resources-card below h2*/
     display: flex;
     /* make the .links-container a horizontal flex container to hold the ul */
     align-items: center;
     /* centers the <ul> vertically inside the tall .links-container */
+    justify-content: center;
+    /* centers the <ul> horizontally inside the tall .links-container */
     padding: var(--space-lg);
 }
 
@@ -266,7 +264,7 @@ figcaption {
     /* pushes the list of links to the right */
     display: flex;
     flex-direction: column;
-    /* creates a flex column to explicitly increase the spacing between the links */
+    /* creates a flex column to explicitly increase the gap between the links */
     gap: var(--space-md);
 }
 
