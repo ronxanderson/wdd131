@@ -13,6 +13,8 @@
     /* Card background */
     --border-color: #333333;
     /* same as text color */
+    --highlight-color: #e9c46a;
+    /* Warm accent */
 
     --text-color: #333333;
     /* Body text */
@@ -294,8 +296,13 @@ footer p {
     margin: 0;
 }
 
+.paw-prints {
+    color: var(--highlight-color);
+}
+
+
 /* LAST MODIFIED LINE */
 #lastModified {
     margin-top: var(--space-sm);
-    color: #ffd966;
+    color: var(--highlight-color);
 }

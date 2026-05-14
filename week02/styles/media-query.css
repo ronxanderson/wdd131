@@ -1,0 +1,51 @@
+:root {
+    --background-color: rgb(69, 160, 220);
+    --surface-color: #ffffff;
+    --border-color: rgb(41, 96, 133);
+    --text-color: #333333;
+
+    --body-font: "Roboto", Arial, sans-serif;
+
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+
+    --max-width: 640px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+}
+
+h1,
+h2,
+footer {
+    text-align: center;
+}
+
+header,
+main,
+footer {
+    max-width: var(--max-width);
+    margin: var(--space-md) auto;
+    border: 1px solid var(--border-color);
+    padding: var(--space-md);
+    background-color: var(--background-color);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1rem;
+    gap: var(--space-md);
+}
+
+section {
+    padding: var(--space-lg);
+    background-color: var(--surface-color);
+}

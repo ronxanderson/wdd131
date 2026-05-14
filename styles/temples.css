@@ -1,0 +1,150 @@
+/* ROOT VARIABLES */
+:root {
+    --primary-color: #2D7FC1;
+    /* darker temple-sky blue */
+    --secondary-color: #2c3e50;
+    --light-text: #ffffff;
+
+    --accent-color: #f7f7f7;
+    /* Softer page background */
+    --card-color: #ffffff;
+    /* White */
+    --border-color: #dcdcdc;
+    /* Light gray border */
+    --text-color: #333333;
+    /* Body text */
+
+    --highlight-color: #e9c46a;
+    /* Warm accent */
+
+    --heading-font: "McLaren", cursive;
+    --body-font: "Roboto", Arial, sans-serif;
+
+    --max-width: 75rem;
+    --radius: .75rem;
+
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+}
+
+header,
+main,
+footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: var(--space-lg);
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+}
+
+.top-title {
+    font-size: 2.0rem;
+    padding: var(--space-lg);
+}
+
+.nav-ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-ul li {
+    flex: 1;
+}
+
+.nav-ul a {
+    display: block;
+    text-align: center;
+    padding: 0.75rem;
+    text-decoration: none;
+    color: var(--light-text);
+}
+
+.nav-ul a:hover {
+    background-color: #3d566e;
+    color: var(--highlight-color);
+}
+
+.links-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+nav {
+    background-color: var(--secondary-color);
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+.top-title {
+    font-family: var(--heading-font);
+}
+
+h1 {
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    gap: var(--space-xl);
+}
+
+.main-grid img {
+    width: 100%;
+    /* makes each image shrink or grow to fit inside its grid column */
+
+    height: auto;
+    /* preserves the image's natural proportions */
+
+    display: block;
+    /* removes the small inline-image gap below images */
+}
+
+figcaption {
+    text-align: center;
+    margin-top: var(--space-sm);
+    color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: var(--space-md);
+}
+
+.paw-prints {
+    color: var(--highlight-color);
+}
+
+#lastModified {
+    margin-top: var(--space-sm);
+    color: var(--highlight-color);
+}
