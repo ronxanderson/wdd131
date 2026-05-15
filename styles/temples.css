@@ -7,8 +7,6 @@
 
     --accent-color: #f7f7f7;
     /* Softer page background */
-    --card-color: #ffffff;
-    /* White */
     --border-color: #dcdcdc;
     /* Light gray border */
     --text-color: #333333;
@@ -21,9 +19,7 @@
     --body-font: "Roboto", Arial, sans-serif;
 
     --max-width: 75rem;
-    --radius: .75rem;
 
-    --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
     --space-lg: 1.5rem;
@@ -52,39 +48,76 @@ header {
     padding: var(--space-lg);
 }
 
-.nav-ul {
-    display: flex;
-    list-style: none;
-}
+/* -------------------------
+   MOBILE MENU BUTTON
+--------------------------*/
 
-.nav-ul li {
-    flex: 1;
-}
-
-.nav-ul a {
+#menu {
     display: block;
-    text-align: center;
-    padding: 0.75rem;
+    /* shows the menu button in mobile view */
+    font-size: 2rem;
+    /* makes the hamburger icon larger */
+    font-weight: 700;
+    /* bold icon for better visibility */
+    text-decoration: none;
+    /* removes link underline */
+    padding: 0.5rem 0.75rem;
+    /* adds space around the icon for easier tapping */
+    background-color: var(--primary-color);
+    /* temple-sky blue from root variables */
+    color: var(--light-text);
+    /* white text/icon for contrast */
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    /* changes cursor to hand on hover */
+}
+
+#menu::before {
+    content: "≡";
+    /* inserts the hamburger menu icon as the button text */
+}
+
+#menu.show::before {
+    content: "×";
+    /* changes the hamburger icon to a close icon when menu is shown */
+}
+
+/* -------------------------
+   NAVIGATION
+--------------------------*/
+
+.navigation {
+    list-style: none;
+    /* removes bullets from the navigation list */
+    margin: 0 auto;
+    padding: 0;
+}
+
+.navigation li {
+    display: none;
+    /* hides navigation items by default on mobile */
+}
+
+.navigation.show li {
+    display: block;
+    /* shows navigation items when .show class is added to the navigation ul */
+}
+
+.navigation a {
+    display: block;
+    padding: var(--space-sm);
+    text-align: left;
     text-decoration: none;
     color: var(--light-text);
+    background-color: var(--primary-color);
+    transition: 0.5s;
+    font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-.nav-ul a:hover {
-    background-color: #3d566e;
+.navigation a:hover,
+.navigation a:active {
+    background-color: var(--secondary-color);
     color: var(--highlight-color);
-}
-
-.links-container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.links-container ul {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
 }
 
 nav {
@@ -113,16 +146,16 @@ h1 {
 .main-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    /* automatically create as many columns as fit in the available width. 
+    each column will be at least 550px wide, but can grow to fill the space if there is extra room. */
     gap: var(--space-xl);
 }
 
 .main-grid img {
     width: 100%;
     /* makes each image shrink or grow to fit inside its grid column */
-
     height: auto;
-    /* preserves the image's natural proportions */
-
+    /* preserves the image's proportions */
     display: block;
     /* removes the small inline-image gap below images */
 }

@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Picture Album | Ron Anderson</title>
     <meta name="author" content="Ron Anderson">
-    <meta name="description" content="W02 Assignment: TemplePicture Album">
+    <meta name="description" content="W02 Assignment: Temple Picture Album">
     <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large-screen.css" media="(min-width: 48rem)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="scripts/temples.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +19,10 @@
 <body>
     <header>
         <span class="top-title">Temple Album</span>
+        <button id="menu" type="button"></button>
+        <!-- a clickable trigger for the navigation menu, css inserts the hamburger icon -->
         <nav>
-            <ul class="nav-ul">
+            <ul class="navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Old</a></li>
                 <li><a href="#">New</a></li>
