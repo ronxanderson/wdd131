@@ -20,6 +20,7 @@
 
     --max-width: 75rem;
 
+    --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
     --space-lg: 1.5rem;
@@ -35,17 +36,18 @@ footer {
 
 header {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-bottom: var(--space-lg);
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
     background-color: var(--primary-color);
     color: var(--light-text);
-    text-align: center;
 }
 
 .top-title {
     font-size: 2.0rem;
-    padding: var(--space-lg);
+    padding: 0;
+    margin: 0;
 }
 
 /* -------------------------
@@ -61,7 +63,7 @@ header {
     /* bold icon for better visibility */
     text-decoration: none;
     /* removes link underline */
-    padding: 0.5rem 0.75rem;
+    padding: var(--space-sm) var(--space-md);
     /* adds space around the icon for easier tapping */
     background-color: var(--primary-color);
     /* temple-sky blue from root variables */
@@ -70,6 +72,7 @@ header {
     border: 1px solid var(--border-color);
     cursor: pointer;
     /* changes cursor to hand on hover */
+    margin-left: auto;
 }
 
 #menu::before {
@@ -85,6 +88,7 @@ header {
 /* -------------------------
    NAVIGATION
 --------------------------*/
+
 
 .navigation {
     list-style: none;
@@ -105,7 +109,7 @@ header {
 
 .navigation a {
     display: block;
-    padding: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
     text-align: left;
     text-decoration: none;
     color: var(--light-text);
@@ -118,10 +122,6 @@ header {
 .navigation a:active {
     background-color: var(--secondary-color);
     color: var(--highlight-color);
-}
-
-nav {
-    background-color: var(--secondary-color);
 }
 
 body {
@@ -143,12 +143,17 @@ h1 {
     color: var(--secondary-color);
 }
 
+.page-title {
+    margin-bottom: var(--space-lg) 0 var(--space-md);
+    /* the h1 title Home  */
+}
+
 .main-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     /* automatically create as many columns as fit in the available width. 
     each column will be at least 550px wide, but can grow to fill the space if there is extra room. */
-    gap: var(--space-xl);
+    gap: var(--space-lg);
 }
 
 .main-grid img {
@@ -173,11 +178,15 @@ footer {
     padding: var(--space-md);
 }
 
+footer p {
+    margin: 0;
+}
+
 .paw-prints {
     color: var(--highlight-color);
 }
 
 #lastModified {
-    margin-top: var(--space-sm);
+    margin-top: var(--space-xs);
     color: var(--highlight-color);
 }
