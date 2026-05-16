@@ -1,0 +1,39 @@
+/* -------------------------
+   DESKTOP SCREEN LAYOUT
+   the selectors and properties here will override the mobile styles when 
+   the screen is wide enough to meet the media query condition in temples.html
+--------------------------*/
+
+@media screen and (min-width: 48rem) {
+
+    h1 {
+        font-size: 2rem;
+        /* increase heading size on larger screens */
+    }
+
+    nav {
+        display: flex;
+    }
+
+    .navigation {
+        display: flex;
+        /* switch navigation container to a horizontal flex layout */
+    }
+
+    .navigation li {
+        display: block;
+        /* override mobile behavior and show the navigation items hidden by default on mobile */
+        flex: 1;
+        /* each navigation item grows equally */
+    }
+
+    .navigation a {
+        text-align: center;
+        /* center link text inside each navigation item */
+    }
+
+    #menu {
+        display: none;
+        /* hide hamburger button on larger screens */
+    }
+}

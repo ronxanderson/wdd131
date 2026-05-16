@@ -6,23 +6,28 @@ const hamButton = document.querySelector('#menu');
 hamButton.addEventListener('click', () => {
     mainNav.classList.toggle('show');
     hamButton.classList.toggle('show');
-    // adds the class 'show' if it does not currently exist or removes the class if it does exist 
-    // the CSS class rules will handle the different views, layouts, and displays 
-    // based on the presence of the 'show' class
+
+    // Update the accessible label for screen readers
+    if (hamButton.classList.contains('show')) {
+        hamButton.setAttribute('aria-label', 'Close navigation menu');
+    } else {
+        hamButton.setAttribute('aria-label', 'Open navigation menu');
+    }
 });
 
 // Reset mobile menu on larger screens
 window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) {   // 48rem × 16px
+    if (window.innerWidth >= 768) {
         mainNav.classList.remove('show');
         hamButton.classList.remove('show');
+        hamButton.setAttribute('aria-label', 'Open navigation menu');
     }
-    // if screen becomes desktop width with mobile menu open, 
-    // remove the mobile menu classes so the menu starts fresh when returning to mobile size.
 });
 
-// get date footer year and last modified date
+// Get footer year and last modified date
 const currentYear = new Date().getFullYear();
+
 document.getElementById("currentYear").textContent = currentYear;
+
 document.getElementById("lastModified").textContent =
     `Last Modified: ${document.lastModified}`;
