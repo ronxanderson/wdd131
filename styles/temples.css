@@ -66,7 +66,7 @@ header {
     padding: var(--space-sm) var(--space-md);
     /* adds space around the icon for easier tapping */
     background-color: var(--primary-color);
-    /* temple-sky blue from root variables */
+    /* temple-sky blue from root variable to match header background */
     color: var(--light-text);
     /* white text/icon for contrast */
     border: 1px solid var(--border-color);
@@ -151,7 +151,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     /* automatically create as many columns as fit in the available width. 
-    each column will be at least 550px wide, but can grow to fill the space if there is extra room. */
+    each column will be at least 550px wide, but can grow to fill the space if space is available. */
     gap: var(--space-lg);
 }
 

@@ -1,18 +1,15 @@
 /* -------------------------
    DESKTOP SCREEN LAYOUT
    the selectors and properties here will override the mobile styles when 
-   the screen is wide enough to meet the media query condition in temples.html
+   the screen is wide enough to meet the media query condition.
 --------------------------*/
 
 @media screen and (min-width: 48rem) {
+    /* 48 rem is 768pxa common breakpoint for tablets and larger screens. */
 
     h1 {
         font-size: 2rem;
         /* increase heading size on larger screens */
-    }
-
-    nav {
-        display: flex;
     }
 
     .navigation {
