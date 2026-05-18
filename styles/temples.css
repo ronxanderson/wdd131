@@ -4,7 +4,7 @@
     /* Forest green */
     --secondary-color: #2c3e50;
     /* Dark blue-gray */
-    --nav-hover-color: #091269;
+    --nav-hover-color: #02020e;
     ;
     /* darker forest green for navigation hover */
     --light-text: #ffffff;
@@ -93,6 +93,9 @@ header {
 /* -------------------------
    NAVIGATION
 --------------------------*/
+nav {
+    display: flex;
+}
 
 .navigation {
     list-style: none;
