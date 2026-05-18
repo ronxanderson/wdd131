@@ -21,10 +21,6 @@
     --light-text: #ffffff;
     /* Text on dark backgrounds */
 
-    --header-bar-background-color: var(--primary-color);
-    --header-bar-text-color: var(--secondary-color);
-    /* unifying the background of h1 and the table header everywhere */
-
     /* FONTS */
     --heading-font: "McLaren", cursive;
     --body-font: "Roboto", Arial, sans-serif;

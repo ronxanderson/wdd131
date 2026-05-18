@@ -1,19 +1,24 @@
 /* ROOT VARIABLES */
 :root {
-    --primary-color: #2D7FC1;
-    /* darker temple-sky blue */
+    --primary-color: #1124cd;
+    /* Forest green */
     --secondary-color: #2c3e50;
+    /* Dark blue-gray */
+    --nav-hover-color: #091269;
+    ;
+    /* darker forest green for navigation hover */
     --light-text: #ffffff;
-
-    --accent-color: #f7f7f7;
-    /* Softer page background */
-    --border-color: #dcdcdc;
-    /* Light gray border */
+    /* White text for dark backgrounds */
+    --accent-color: #f4f4f4;
+    /* Soft light gray page background */
+    --card-color: #ffffff;
+    /* White card background */
+    --border-color: #333333;
+    /* Dark gray border */
     --text-color: #333333;
     /* Body text */
-
     --highlight-color: #e9c46a;
-    /* Warm accent */
+    /* Warm gold accent */
 
     --heading-font: "McLaren", cursive;
     --body-font: "Roboto", Arial, sans-serif;
@@ -119,7 +124,7 @@ header {
 
 .navigation a:hover,
 .navigation a:active {
-    background-color: var(--secondary-color);
+    background-color: var(--nav-hover-color);
     color: var(--highlight-color);
 }
 
@@ -137,13 +142,10 @@ h3,
     font-family: var(--heading-font);
 }
 
-h1 {
+h1.page-title {
     text-align: center;
     color: var(--secondary-color);
-}
-
-.page-title {
-    margin-bottom: var(--space-lg) 0 var(--space-md);
+    margin-bottom: 0;
     /* the h1 title Home  */
 }
 
