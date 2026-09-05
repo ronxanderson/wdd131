@@ -295,6 +295,7 @@ footer {
 }
 
 footer p {
+    display: inline;
     margin: 0;
 }
 
@@ -305,6 +306,8 @@ footer p {
 
 /* LAST MODIFIED LINE */
 #lastModified {
+    display: block;
+    /* puts the last-modified paragraph on its own line */
     margin-top: var(--space-sm);
     color: var(--highlight-color);
 }
